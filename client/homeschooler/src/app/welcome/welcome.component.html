@@ -1,0 +1,11 @@
+
+<div   *ngIf="isUserLoggedIn">
+    <app-header-summary></app-header-summary>  
+    <app-body-summary></app-body-summary>
+</div>
+
+<div   *ngIf="!isUserLoggedIn"  >
+    <h1>Not logged in</h1>
+
+</div>
+

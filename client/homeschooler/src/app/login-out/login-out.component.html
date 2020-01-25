@@ -1,0 +1,17 @@
+
+<li  *ngIf="!ValidateUserLoginService.isUserLoggedIn()"  class="nav-item">
+  <a href="#myModal" class="nav-link login"  data-toggle="modal" data-target="#myModal" > 
+    <span class="d-none d-sm-inline-block">LogIn</span>
+    <i class="fa fa-sign-in"></i>
+  </a>
+</li>
+
+<li  *ngIf="ValidateUserLoginService.isUserLoggedIn()"  class="nav-item">
+  <button (click)=logout()  class="btn-danger"> 
+    <span class="d-none d-sm-inline-block">LogOut</span>
+    <i class="fa fa-sign-out"></i>
+  </button>
+</li> 
+
+<app-login></app-login>
+

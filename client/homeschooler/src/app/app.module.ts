@@ -11,10 +11,15 @@ import { ResourcesComponent } from './app-footer/resources/resources.component';
 import { HsimagesComponent } from './app-header/hsimages/hsimages.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule } from  '@angular/material';
-import { LoginRegisterComponent } from './login-register/login-register.component';
+import { LoginRegisterComponent } from './login-out/login-register/login-register.component';
 import { ValidateUserLoginService } from './services/validate-user-login.service';
-import { LogoutComponent } from './logout/logout.component';
-import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './login-out/logout/logout.component';
+import { LoginComponent } from './login-out/login/login.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HeaderSummaryComponent } from './header-summary/header-summary.component';
+import { BodySummaryComponent } from './body-summary/body-summary.component';
+import { LoginOutComponent } from './login-out/login-out.component';
 
 
 @NgModule({
@@ -27,7 +32,12 @@ import { LoginComponent } from './login/login.component';
     HsimagesComponent,
     LoginRegisterComponent,
     LogoutComponent,
-    LoginComponent
+    LoginComponent,
+    WelcomeComponent,
+    NavbarComponent,
+    HeaderSummaryComponent,
+    BodySummaryComponent,
+    LoginOutComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +50,7 @@ import { LoginComponent } from './login/login.component';
     MatButtonModule,
     MatIconModule
   ],
-  providers: [ValidateUserLoginService],
+  providers: [ValidateUserLoginService, LogoutComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
