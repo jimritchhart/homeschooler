@@ -20,6 +20,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HeaderSummaryComponent } from './header-summary/header-summary.component';
 import { BodySummaryComponent } from './body-summary/body-summary.component';
 import { LoginOutComponent } from './login-out/login-out.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { LoginOutComponent } from './login-out/login-out.component';
     MatSidenavModule,
     MatListModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [ValidateUserLoginService, LogoutComponent],
   bootstrap: [AppComponent]

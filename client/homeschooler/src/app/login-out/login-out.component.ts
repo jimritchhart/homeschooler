@@ -22,7 +22,7 @@ export class LoginOutComponent implements OnInit {
     //isUserLoggedIn = this.ValidateUserLoginService.isUserLoggedIn();
   
   logout(){
-    this.ValidateUserLoginService.logout()
+    this.ValidateUserLoginService.logout() 
     this.router.navigate(['welcome']);    
   }
 }

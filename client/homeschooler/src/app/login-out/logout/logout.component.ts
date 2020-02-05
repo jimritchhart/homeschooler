@@ -19,7 +19,8 @@ export class LogoutComponent implements OnInit {
 
   logout() {
     this.ValidateUserLoginService.logout();
-    this.router.navigate(['Welcome']);
+    this.router.navigate(['welcome']);
+    return true;
   } 
 
 }

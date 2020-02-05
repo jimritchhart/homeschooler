@@ -13,7 +13,7 @@ export class WelcomeComponent implements OnInit {
     this.isUserLoggedIn = this.ValidateUserLoginService.isUserLoggedIn();
   }
 
-  ngOnInit() {  
+  ngOnInit() {   
     
    }
   

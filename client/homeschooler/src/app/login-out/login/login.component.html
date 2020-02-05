@@ -20,7 +20,9 @@
               placeholder="Password" required="required"  [(ngModel)]="password">	
 					</div>        
 					<div class="form-group">
-						<button   (click)="validateUser()" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
+						<button   (click)="validateUser()" class="btn btn-primary btn-lg btn-block login-btn" data-dismiss="modal" #closeAddExpenseModal>
+							Login
+						</button>
 					</div>
 				</form>
 			</div>
