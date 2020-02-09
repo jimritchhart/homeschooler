@@ -5,6 +5,7 @@ import { LogoutComponent} from './login-out/logout/logout.component';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login-out/login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { SetupschoolComponent } from './gettingstarted/setupschool/setupschool.component';
 
 import { RouteGuardService } from './services/route-guard.service';
 
@@ -12,7 +13,7 @@ const routes: Routes = [
  { path: '', component: AppComponent, }, 
  //{ path: 'login', component: LoginComponent},
  { path: 'welcome', component: WelcomeComponent},
- //{ path: '#myModal', component: LoginComponent},
+ { path: 'SetupSchool', component: SetupschoolComponent},
  { path: 'logout', component: LogoutComponent, canActivate:[RouteGuardService] },
  { path: '**', component: WelcomeComponent}
 ];

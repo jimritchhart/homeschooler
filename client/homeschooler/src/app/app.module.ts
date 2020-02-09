@@ -21,6 +21,7 @@ import { HeaderSummaryComponent } from './header-summary/header-summary.componen
 import { BodySummaryComponent } from './body-summary/body-summary.component';
 import { LoginOutComponent } from './login-out/login-out.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SetupschoolComponent } from './gettingstarted/setupschool/setupschool.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     HeaderSummaryComponent,
     BodySummaryComponent,
-    LoginOutComponent
+    LoginOutComponent,
+    SetupschoolComponent
   ],
   imports: [
     BrowserModule,
