@@ -2,36 +2,52 @@
   <h1>My First Bootstrap Page</h1>
   <p>This is some text.</p>
 
+
   <form class="col-lg-6 offset-lg-2 ">
     <div class="row form-group">
       <label for="Name" class="col-sm-2 col-form-label">Name:</label>
       <div class="col-sm-10">
         <input type="Name" class="form-control" placeholder="Enter Name" 
-        maxlength="50" id="Name" [(ngModel)]="name">
+        maxlength="50" id="Name" [(ngModel)]="schools.name" name="Name">
       </div>
     </div>
     <div class="row form-group">
       <label for="Address Line 1" class="col-sm-2 col-form-label ">Address Line 1:</label>
       <div class="col-sm-10">
         <input type="Address Line 1" class="form-control" placeholder="Address Line 1" id="adr1"
-          [(ngModel)]="adr1">
+        [(ngModel)]="schools.address1" name="address1">
       </div>
     </div>
     <div class="row form-group ">
       <label for="Address Line 2" class="col-sm-2 col-form-label">Address Line 2:</label>
       <div class="col-sm-10">
         <input type="Address Line 2" class="form-control" placeholder="Address Line 2" id="adr2"
-          [(ngModel)]="adr2">
+        [(ngModel)]="schools.address2" name="address2">
       </div>
     </div>
     <div class="row form-group ">
       <label for="City" class="col-sm-2 col-form-label">City:</label>
       <div class="col-sm-10">
-        <input type="City" class="form-control  mr-sm-2" placeholder="City" id="City" [(ngModel)]="city">
+        <input type="City" class="form-control  mr-sm-2" placeholder="City" id="City" 
+        [(ngModel)]="schools.city" name="city">
+      </div>
+    </div>
+    <div class="row form-group ">
+      <label for="State" class="col-sm-2 col-form-label">State:</label>
+      <div class="col-sm-10">
+        <input type="State" class="form-control  mr-sm-2" placeholder="State" id="State" 
+        [(ngModel)]="schools.state" name="State">
+      </div>
+    </div>
+    <div class="row form-group ">
+      <label for="Zip" class="col-sm-2 col-form-label">Zip:</label>
+      <div class="col-sm-10">
+        <input type="Zip" class="form-control  mr-sm-2" placeholder="Zip" id="Zip" 
+        [(ngModel)]="schools.zipCode" name="Zip">
       </div>
     </div>
 
-    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+    <button type="submit" class="btn btn-primary mb-2" >Retrieve School</button>
   </form>
 
 
