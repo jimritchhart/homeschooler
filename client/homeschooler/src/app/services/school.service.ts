@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SetupschoolComponent } from '../gettingstarted/setupschool/setupschool.component';
 
 import { Schools } from '../model/Schools'
@@ -16,7 +16,21 @@ export class SchoolService {
   
   retrieveSchoolByID( schoolID ){
     console.log(schoolID);
-      return this.http.get<Schools>(`http://localhost:8090/getSchool/${schoolID}`);
+      let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
+
+      let header = new HttpHeaders({
+        Authorization: basicAuthHeaderString
+      })
+
+      return this.http.get<Schools>(`http://localhost:8090/getSchool/${schoolID}`,
+        {headers : header});
+  }
+
+  createBasicAuthenticationHttpHeader() {
+    let username = 'user'; 
+    let passowrd = 'password';
+    let basicAuthHeaderString = 'Basic ' + window.btoa(username + ':' + passowrd);
+    return basicAuthHeaderString;
   }
 
 }

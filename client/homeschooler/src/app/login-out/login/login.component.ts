@@ -2,6 +2,7 @@ import { Component, OnInit, Injectable } from '@angular/core';
 import {ValidateUserLoginService} from '../../services/validate-user-login.service';
 import {Router} from '@angular/router';
 import { ViewChild, ElementRef} from '@angular/core';
+import { BasicAuthenticationService } from 'src/app/services/basic-authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,9 @@ export class LoginComponent implements OnInit {
   public validUserMessage = '';
   @ViewChild('closeAddExpenseModal') closeAddExpenseModal: ElementRef;
 
-  constructor( private router: Router, private ValidateUserLoginService: ValidateUserLoginService) { }
+  constructor( private router: Router, 
+                private ValidateUserLoginService: ValidateUserLoginService,
+                private BasicAuthenticationService: BasicAuthenticationService) { }
 
   ngOnInit() {
   }
@@ -30,5 +33,25 @@ export class LoginComponent implements OnInit {
       this.validUserMessage = 'User / Password Combination not found';
     }
   }
+
+
+  basicAuthValidateUser() {
+    this.BasicAuthenticationService.executeAuthenticationService(this.username, this.password) 
+        .subscribe(
+          data => {
+            console.log(data)
+            this.validUserMessage = '';
+            this.closeAddExpenseModal.nativeElement.click();
+            this.router.navigate(['welcome']);
+            return true;
+          },
+          error => {
+            console.log(error);
+            this.validUserMessage = 'Invalid Login';
+            return false;
+          }  
+        )
+  }
+
 
 }

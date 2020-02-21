@@ -12,13 +12,13 @@ export class SetupschoolComponent implements OnInit {
   schools: Schools;
 
   constructor( private schoolService:SchoolService) { 
-
+    this.schools = new Schools;
   }
 
   ngOnInit() { 
     this.schoolService.retrieveSchoolByID(1).subscribe(
       response=> {      
-        console.log(response);
+        //console.log(response);
         this.schools = response;
       }
     )

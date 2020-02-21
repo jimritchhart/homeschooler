@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login-out/login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { SetupschoolComponent } from './gettingstarted/setupschool/setupschool.component';
+import { SetupstudentsComponent } from './gettingstarted/setupstudents/setupstudents.component';
 
 import { RouteGuardService } from './services/route-guard.service';
 
@@ -14,6 +15,7 @@ const routes: Routes = [
  //{ path: 'login', component: LoginComponent},
  { path: 'welcome', component: WelcomeComponent},
  { path: 'SetupSchool', component: SetupschoolComponent},
+ { path: 'SetupStudents', component: SetupstudentsComponent},
  { path: 'logout', component: LogoutComponent, canActivate:[RouteGuardService] },
  { path: '**', component: WelcomeComponent}
 ];

@@ -20,8 +20,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HeaderSummaryComponent } from './header-summary/header-summary.component';
 import { BodySummaryComponent } from './body-summary/body-summary.component';
 import { LoginOutComponent } from './login-out/login-out.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SetupschoolComponent } from './gettingstarted/setupschool/setupschool.component';
+import { SetupstudentsComponent } from './gettingstarted/setupstudents/setupstudents.component';
+import { HttpIntercepterBasicAuthService } from './services/http/http-intercepter-basic-auth.service';
 
 
 @NgModule({
@@ -40,7 +42,8 @@ import { SetupschoolComponent } from './gettingstarted/setupschool/setupschool.c
     HeaderSummaryComponent,
     BodySummaryComponent,
     LoginOutComponent,
-    SetupschoolComponent
+    SetupschoolComponent,
+    SetupstudentsComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,9 @@ import { SetupschoolComponent } from './gettingstarted/setupschool/setupschool.c
     MatIconModule,
     HttpClientModule
   ],
-  providers: [ValidateUserLoginService, LogoutComponent],
+  providers: [ValidateUserLoginService, LogoutComponent,
+              {provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true}
+              ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

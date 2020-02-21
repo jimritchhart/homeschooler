@@ -9,8 +9,7 @@ export class ValidateUserLoginService {
   constructor(private http:HttpClient) { }
 
    validateUserID(userid, password){
-    //if ( userid == "jritchhart@gmail.com" && password == "samara11" ) {
-    //console.log(this.http.get('http://localhost:8090/isValidUser/${userid}/${password}'));
+
     if (this.http.get('http://localhost:8090/isValidUser/${userid}/${password}')) {
       sessionStorage.setItem('authenticatedUser', userid);
       return true;

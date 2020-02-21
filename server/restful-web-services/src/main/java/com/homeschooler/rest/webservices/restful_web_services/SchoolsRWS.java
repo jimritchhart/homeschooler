@@ -11,7 +11,7 @@ import com.homeschooler.model.Schools;
 import com.homeschooler.model.User;
 import com.homeschooler.services.SchoolsService;
 
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin
 @ComponentScan({"com.homeschooler.services"})
 @RestController
 public class SchoolsRWS {
