@@ -31,6 +31,13 @@
 			<version>2.2.2.RELEASE</version>
 		</dependency>
 
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.9.1</version>
+			<url>https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt</url>
+		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

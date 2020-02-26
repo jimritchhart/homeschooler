@@ -12,7 +12,7 @@ import { HsimagesComponent } from './app-header/hsimages/hsimages.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule } from  '@angular/material';
 import { LoginRegisterComponent } from './login-out/login-register/login-register.component';
-import { ValidateUserLoginService } from './services/validate-user-login.service';
+//import { ValidateUserLoginService } from './services/Not_Used_validate-user-login.service';
 import { LogoutComponent } from './login-out/logout/logout.component';
 import { LoginComponent } from './login-out/login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -57,8 +57,9 @@ import { HttpIntercepterBasicAuthService } from './services/http/http-intercepte
     MatIconModule,
     HttpClientModule
   ],
-  providers: [ValidateUserLoginService, LogoutComponent,
-              {provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true}
+  providers: [//ValidateUserLoginService, 
+              LogoutComponent
+             ,{provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true}
               ],
   bootstrap: [AppComponent]
 })

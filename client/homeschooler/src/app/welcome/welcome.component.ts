@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ValidateUserLoginService } from '../services/validate-user-login.service';
+import { BasicAuthenticationService } from 'src/app/services/basic-authentication.service';
 
 @Component({
   selector: 'app-welcome',
@@ -9,8 +9,8 @@ import {ValidateUserLoginService } from '../services/validate-user-login.service
 export class WelcomeComponent implements OnInit {
 
   public isUserLoggedIn: Boolean;
-  constructor(private ValidateUserLoginService: ValidateUserLoginService) { 
-    this.isUserLoggedIn = this.ValidateUserLoginService.isUserLoggedIn();
+  constructor(private BasicAuthenticationService: BasicAuthenticationService) { 
+    this.isUserLoggedIn = this.BasicAuthenticationService.isUserLoggedIn();
   }
 
   ngOnInit() {   

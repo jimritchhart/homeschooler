@@ -1,5 +1,5 @@
 import { Component , OnInit} from '@angular/core';
-import {ValidateUserLoginService} from './services/validate-user-login.service';
+//import {ValidateUserLoginService} from './services/Not_Used_validate-user-login.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,8 @@ export class AppComponent implements OnInit{
   title = 'homeschooler';
   //isUserLoggedIn: boolean = false;
 
-  constructor(private ValidateUserLoginService: ValidateUserLoginService){
+  constructor(//private ValidateUserLoginService: ValidateUserLoginService
+    ){
 
   }
 

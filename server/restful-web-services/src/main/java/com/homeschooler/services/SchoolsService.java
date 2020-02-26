@@ -3,7 +3,7 @@ package com.homeschooler.services;
 import org.springframework.stereotype.Service;
 
 import com.homeschooler.model.Schools;
-import com.homeschooler.model.User;
+
 
 @Service
 public class SchoolsService {

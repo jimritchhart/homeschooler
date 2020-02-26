@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {ValidateUserLoginService } from '../services/validate-user-login.service';
+import {BasicAuthenticationService } from '../services/basic-authentication.service';
 import {LogoutComponent} from './logout/logout.component';
 import { Router } from '@angular/router';
 
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class LoginOutComponent implements OnInit {
 
-  constructor(private ValidateUserLoginService: ValidateUserLoginService,
+  constructor(private BasicAuthenticationService: BasicAuthenticationService,
               private LogoutComponent: LogoutComponent,
               private router: Router ) { 
     
@@ -22,7 +22,7 @@ export class LoginOutComponent implements OnInit {
     //isUserLoggedIn = this.ValidateUserLoginService.isUserLoggedIn();
   
   logout(){
-    this.ValidateUserLoginService.logout() 
+    this.BasicAuthenticationService.logout() 
     this.router.navigate(['welcome']);    
   }
 }

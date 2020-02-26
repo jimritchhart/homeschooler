@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class ValidateUserLoginService { 
+export class Not_Used_ValidateUserLoginService { 
 
   constructor(private http:HttpClient) { }
 

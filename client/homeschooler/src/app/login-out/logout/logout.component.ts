@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 
-import {ValidateUserLoginService } from '../../services/validate-user-login.service';
+import {BasicAuthenticationService } from '../../services/basic-authentication.service';
 
 @Component({
   selector: 'app-logout',
@@ -10,7 +10,7 @@ import {ValidateUserLoginService } from '../../services/validate-user-login.serv
 })
 export class LogoutComponent implements OnInit {
 
-  constructor(private ValidateUserLoginService: ValidateUserLoginService
+  constructor(private BasicAuthenticationService: BasicAuthenticationService
             ,private router: Router ) { }
 
   ngOnInit() {
@@ -18,7 +18,7 @@ export class LogoutComponent implements OnInit {
   }
 
   logout() {
-    this.ValidateUserLoginService.logout();
+    this.BasicAuthenticationService.logout();
     this.router.navigate(['welcome']);
     return true;
   } 
