@@ -22,6 +22,23 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  jwtAuthValidateUser() {
+    this.BasicAuthenticationService.executeJWTAuthenticationService(this.username, this.password) 
+        .subscribe(
+          data => {
+            console.log(data)
+            this.validUserMessage = '';
+            this.closeAddExpenseModal.nativeElement.click();
+            this.router.navigate(['welcome', this.username]);
+            return true;
+          },
+          error => {
+            console.log(error);
+            this.validUserMessage = 'User / Password Combination not found';
+          }  
+        )
+  }
+
   basicAuthValidateUser() {
     this.BasicAuthenticationService.executeAuthenticationService(this.username, this.password) 
         .subscribe(
@@ -38,6 +55,6 @@ export class LoginComponent implements OnInit {
           }  
         )
   }
-
+  
 
 }
