@@ -60,7 +60,10 @@ public class JWTWebSecurityConfig extends WebSecurityConfigurerAdapter {
             .exceptionHandling().authenticationEntryPoint(jwtUnAuthorizedResponseAuthenticationEntryPoint).and()
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
             .authorizeRequests()
-            .anyRequest().authenticated();
+            	.antMatchers("/h2-console/**").hasRole("ADMIN")//allow h2 console access to admins only
+            	.anyRequest().authenticated()
+            	.and().csrf().ignoringAntMatchers("/h2-console/**")//don't apply CSRF protection to /h2-console
+            	;
 
        httpSecurity
             .addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
@@ -73,22 +76,14 @@ public class JWTWebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity webSecurity) throws Exception {
-        webSecurity
-            .ignoring()
-            .antMatchers(
-                HttpMethod.POST,
-                authenticationPath
-            )
-            .antMatchers(HttpMethod.OPTIONS, "/**")
-            .and()
-            .ignoring()
-            .antMatchers(
-                HttpMethod.GET,
-                "/" //Other Stuff You want to Ignore
-            )
-            .and()
-            .ignoring()
-            .antMatchers("/h2-console/**/**");//Should not be in Production!
+		webSecurity.ignoring().antMatchers(HttpMethod.POST, authenticationPath)
+		.antMatchers(HttpMethod.OPTIONS, "/**")
+		.and().ignoring()
+		.antMatchers(HttpMethod.GET, "/" // Other Stuff You want to Ignore
+		).and().ignoring()
+		.antMatchers("/h2-console/**/**");// Should not 
     }
+    
+
 }
 
